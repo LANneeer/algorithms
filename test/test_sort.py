@@ -1,6 +1,7 @@
 from main import gen_array
 from sort.bubble import bubble_sort
 from sort.insertion import insertion_sort
+from sort.merge import merge_sort
 
 
 def test_bubble_sort():
@@ -15,6 +16,13 @@ def test_insertion_sort():
     assert insertion_sort(array) == sorted_array, insertion_sort(array)
 
 
+def test_merge_sort():
+    array = gen_array(length=100)
+    sorted_array = sorted(array)
+    assert merge_sort(array) == sorted_array, merge_sort(array)
+
+
 if __name__ == '__main__':
     test_bubble_sort()
     test_insertion_sort()
+    test_merge_sort()
