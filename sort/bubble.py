@@ -1,4 +1,4 @@
-def sort(array: list) -> list:
+def bubble_sort(array: list) -> list:
     """
     :param array:
     :return: list:
