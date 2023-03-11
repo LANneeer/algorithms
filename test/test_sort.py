@@ -1,8 +1,5 @@
 from main import gen_array
-from sort.bubble import bubble_sort
-from sort.insertion import insertion_sort
-from sort.merge import merge_sort
-from sort.quick import quick_sort
+from sort import bubble_sort, insertion_sort, merge_sort, quick_sort, selection_sort
 
 
 def test_bubble_sort():
@@ -29,8 +26,15 @@ def test_quick_sort():
     assert quick_sort(array) == sorted_array, quick_sort(array)
 
 
+def test_selection_sort():
+    array = gen_array(length=100)
+    sorted_array = sorted(array)
+    assert selection_sort(array) == sorted_array, selection_sort(array)
+
+
 if __name__ == '__main__':
     test_bubble_sort()
     test_insertion_sort()
     test_merge_sort()
     test_quick_sort()
+    test_selection_sort()
