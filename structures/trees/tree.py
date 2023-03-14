@@ -4,8 +4,7 @@ class Node:
     In this example we created Binary Tree which have two edges for each node
     """
     def __init__(self, data):
-        self.left = None
-        self.right = None
+        self.nodes = []
         self.data = data
 
     def __repr__(self):
@@ -18,10 +17,10 @@ class Node:
 
         Creating getter and make it as property
         """
-        return [self.left, self.right]
+        return self.nodes
 
     @node.setter
-    def node(self, node: 'Node') -> None:
+    def node(self, node_and_root: list['Node', int]) -> None:
         """
         :param node:
         :return:
@@ -30,24 +29,21 @@ class Node:
         if we have two not None edges we get deep in Node and search in this Node None edge,
         if we again have two not None edges we repeat this cycle
         """
-        if not self.left:
-            self.left = node
-        elif not self.right:
-            self.right = node
-        else:
+        node, root = node_and_root
+        if root:
+            if root == self.data:
+                self.nodes.append(node)
             nodes = self.node
             while nodes:
                 for child in nodes:
-                    if not child.left:
-                        child.left = node
-                        nodes = False
-                        break
-                    elif not child.right:
-                        child.right = node
+                    if child.data == root:
+                        child.node.append(node)
                         nodes = False
                         break
                     else:
                         nodes = child.node
+        else:
+            self.nodes.append(node)
 
     def to_list(self, node: 'Node'):
         """
