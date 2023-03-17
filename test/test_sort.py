@@ -1,4 +1,4 @@
-from main import gen_array
+from helpers.mock_data import gen_array
 from sort import bubble_sort, insertion_sort, merge_sort, quick_sort, selection_sort, heap_sort
 
 
