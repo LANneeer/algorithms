@@ -1,5 +1,7 @@
 from structures.trees import BinaryNode, Node
-from structures.graphs import Graph
+from structures.graphs import Graph, LinkedList, LNode
+
+from helpers.mock_data import gen_array
 
 def test_binary_tree():
     tree_dict = {1: [{2: [{4: []}, {5: []}]}, {3: [{6: []}, {7: []}]}]}
@@ -30,7 +32,17 @@ def test_graph():
     assert graph_dict == graph.vertex, graph.vertex
 
 
+def test_linked_list():
+    native_list = gen_array(length=10)
+    native_list.append(12)
+    linked_list = LinkedList(nodes=[LNode(item) for item in native_list])
+    linked_list.add_last(LNode(12))
+    list_of_linked_list = [node for node in linked_list]
+    assert native_list == list_of_linked_list, list_of_linked_list
+
+
 if __name__ == '__main__':
     test_binary_tree()
     test_non_binary_tree()
     test_graph()
+    test_linked_list()
