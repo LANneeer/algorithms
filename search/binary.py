@@ -16,5 +16,5 @@ def binary_search(array: list, element: object) -> object:
         elif array[mid] < element:
             low = mid + 1
         else:
-            return array[mid]
+            return mid
     return -1

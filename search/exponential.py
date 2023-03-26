@@ -12,8 +12,10 @@ def exponential_search(array: list, element: object) -> object:
     the time complexity of this algorithm is O(log n) such as in Binary search
     """
     if array[0] == element:
-        return array[0]
+        return 0
     index = 1
-    while index < len(array) and array[index] <= element:
+    length = len(array)
+    while index < length and array[index] <= element:
         index *= 2
-    return binary_search(array=array[index//2:min(index, len(array)-1)], element=element)
+    diff = min(index, length-1) - (index//2)
+    return binary_search(array=array[index//2:min(index, length-1)], element=element) + diff
