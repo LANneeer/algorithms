@@ -74,15 +74,15 @@ def subject_expectation(subject: str, percents_of_knowledge: list, max_point: in
     обрати внимание что max_point имеет значение по умолчанию, это мы задали написав "max_point = 20"
     """
     topics_qty = my_len(percents_of_knowledge)   # узнаем количество тем
-    average = sum(topics_qty) // topics_qty  # узнаем средний процент по всем темам
+    average = sum(percents_of_knowledge) // topics_qty  # узнаем средний процент по всем темам
     sq = 0  # создаем переменную для подсчета квадратичной разницы
     for percent in percents_of_knowledge:  # пробегаемся по всем процентам по темам
         sq += (percent - average) ** 2  # высчитываем квадратичную сумму
     sq = (sq // topics_qty - 1) ** 0.5  # заканчиваем расчет находя корень
     expectations = [
-        ((average - sq) // 100) * max_point,  # твой минимальный балл
-        (average // 100) * max_point,  # твой средний балл
-        ((average + sq) // 100) * max_point,  # твой максимальный
+        int(((average - sq) / 100) * max_point),  # твой минимальный балл
+        int((average / 100) * max_point),  # твой средний балл
+        int(((average + sq) / 100) * max_point),  # твой максимальный
     ]  # наши ожидания
     return {subject: expectations}  # возвращаем наши ожидания
 
