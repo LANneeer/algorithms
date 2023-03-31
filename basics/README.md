@@ -12,11 +12,9 @@ or  in triple quotation marks """ some comment """
 ## How to start?
 1. Variables + Data types
 2. Cycles
-3. Conditions 
-4. Functions 
-5. More data types 
-6. What is algorithm and types of algorithms 
-7. OOP
+3. Functions 
+4. What is algorithm and types of algorithms 
+5. OOP
 ***
 ## P.S.:
 **this block will have comments
