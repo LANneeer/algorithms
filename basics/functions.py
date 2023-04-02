@@ -99,10 +99,11 @@ print(liter_ed)
 print(mathematics)
 print(informatics)
 
-summary = history["history"][1] + \
-          math_ed["math_ed"][1] + \
-          liter_ed["liter_ed"][1] + \
-          mathematics["mathematics"][1] + \
-          informatics["informatics"][1]
+for element in range(3):
+    summary = history["history"][element] + \
+              math_ed["math_ed"][element] + \
+              liter_ed["liter_ed"][element] + \
+              mathematics["mathematics"][element] + \
+              informatics["informatics"][element]
 
-print("твой балл на ЕНТ:", summary)  # выводим ожидаемый итог
+    print("твой балл на ЕНТ:", summary)  # выводим ожидаемый итог
