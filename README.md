@@ -21,3 +21,7 @@ also help to remind different algorithms and data structures.
 2. Non binary tree _\[done\]_
 3. Graph _\[done\]_
 4. Linked list _\[done\]_
+### Math
+#### Statistics
+1. Dispersion
+2. Standard deviation
