@@ -1,5 +1,6 @@
 from structures.trees import BinaryNode, Node
 from structures.graphs import Graph, LinkedList, LNode
+from structures.queue import Queue
 
 from helpers.mock_data import gen_array
 
@@ -41,8 +42,19 @@ def test_linked_list():
     assert native_list == list_of_linked_list, list_of_linked_list
 
 
+def test_queue():
+    queue = Queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    assert queue.dequeue() == 1, 'FIFO concept was lost'
+    assert queue.dequeue() == 2, 'FIFO concept was lost'
+    assert queue.dequeue() == 3, 'FIFO concept was lost'
+
+
 if __name__ == '__main__':
     test_binary_tree()
     test_non_binary_tree()
     test_graph()
+    test_queue()
     test_linked_list()
