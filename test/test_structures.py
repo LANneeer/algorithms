@@ -35,10 +35,10 @@ def test_graph():
 
 def test_linked_list():
     native_list = gen_array(length=10)
+    linked_list = LinkedList(nodes=[item for item in native_list])
     native_list.append(12)
-    linked_list = LinkedList(nodes=[LNode(item) for item in native_list])
     linked_list.add_last(LNode(12))
-    list_of_linked_list = [node for node in linked_list]
+    list_of_linked_list = [node.data for node in linked_list]
     assert native_list == list_of_linked_list, list_of_linked_list
 
 
