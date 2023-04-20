@@ -9,6 +9,13 @@ class Queue:
     def __init__(self):
         self.items = deque()
 
+    def __repr__(self):
+        return f'{self.items}'
+
+    def __iter__(self):
+        while self.items:
+            yield self.dequeue()
+
     def enqueue(self, item) -> None:
         self.items.append(item)
 

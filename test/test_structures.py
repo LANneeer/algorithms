@@ -47,9 +47,9 @@ def test_queue():
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    assert queue.dequeue() == 1, 'FIFO concept was lost'
-    assert queue.dequeue() == 2, 'FIFO concept was lost'
-    assert queue.dequeue() == 3, 'FIFO concept was lost'
+    queue_list = [item for item in queue]
+    assert [1, 2, 3] == queue_list, queue_list
+    assert [] == list(queue.items), queue.items
 
 
 if __name__ == '__main__':
