@@ -12,5 +12,5 @@ class Queue:
     def enqueue(self, item) -> None:
         self.items.append(item)
 
-    def enqueue(self) -> object:
+    def dequeue(self) -> object:
         return self.items.popleft()
