@@ -1,8 +1,9 @@
 from structures.trees import BinaryNode, Node
 from structures.graphs import Graph, LinkedList, LNode
 from structures.queue import Queue
-
+from structures.stack import Stack
 from helpers.mock_data import gen_array
+
 
 def test_binary_tree():
     tree_dict = {1: [{2: [{4: []}, {5: []}]}, {3: [{6: []}, {7: []}]}]}
@@ -52,9 +53,20 @@ def test_queue():
     assert [] == list(queue.items), queue.items
 
 
+def test_stack():
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack_pack = [item for item in stack]
+    assert [3, 2, 1] == stack_pack, stack_pack
+    assert [] == list(stack.items), stack.items
+
+
 if __name__ == '__main__':
     test_binary_tree()
     test_non_binary_tree()
     test_graph()
     test_queue()
     test_linked_list()
+    test_stack()
