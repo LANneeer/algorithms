@@ -1,4 +1,4 @@
-from structures.trees import BinaryNode, Node
+from structures.trees import BinaryNode, Node, BinarySearchNode
 from structures.graphs import Graph, LinkedList, LNode
 from structures.queue import Queue
 from structures.stack import Stack
@@ -11,6 +11,32 @@ def test_binary_tree():
     for node in range(2, 8):
         tree.node = BinaryNode(node)
     assert tree_dict == tree.to_dict(tree), tree.to_dict(tree)
+
+
+def test_binary_search_tree():
+    tree_dict = {
+        1:
+            [
+                {0: [
+                    {-2: [
+                        {-1: []}
+                    ]}
+                ]},
+                {2: [
+                    {3: []}
+                ]}
+            ]
+    }
+    tree = BinarySearchNode(1)
+    tree.node = BinarySearchNode(0)
+    tree.node = BinarySearchNode(2)
+    tree.node = BinarySearchNode(-2)
+    tree.node = BinarySearchNode(3)
+    tree.node = BinarySearchNode(-1)
+    assert tree_dict == tree.to_dict(tree), tree.to_dict(tree)
+    assert -2 == tree.binary_search(-2).data, tree.binary_search(-2).data
+    tree.delete(-2)
+    assert tree_dict != tree.to_dict(tree), tree.to_dict(tree)
 
 
 def test_non_binary_tree():
