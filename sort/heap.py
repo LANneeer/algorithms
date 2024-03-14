@@ -1,9 +1,9 @@
 def heap_sort(array: list) -> list:
     """
-    :param array:
-    :return: list:
     Heap sort is similar to Quick sort and also "separate" array to left and right sides,
     Heap sort use one array and shift items in array
+    :param array:
+    :return: list:
     """
 
     length = len(array)
