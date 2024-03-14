@@ -5,3 +5,4 @@ def dispersion(*args: int) -> int:
     for i in args:
         sigma += (i - avg) ** 2
     return round(sigma / (qty - 1))
+
