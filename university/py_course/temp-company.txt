@@ -1,0 +1,5 @@
+seo google 20,20
+sem yandex 15,60
+email promo 13,20
+sem yandex 9,80
+sem google 14,80
