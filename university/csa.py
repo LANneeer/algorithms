@@ -41,13 +41,12 @@ class Memory:
             "Hits:": result["hit"],
             "Misses:": result["miss"],
             "Hits in percent:": str(result["hit"] / result["access"] * 100) + "%",
-            "Misses in percent:": str(result["miss"] / result["access"] * 100) + "%"
+            "Misses in percent:": str(result["miss"] / result["access"] * 100) + "%",
         }
 
 
 class BaseStrategy(Strategy):
-    def calculate(self, **kwargs) -> None:
-        ...
+    def calculate(self, **kwargs) -> None: ...
 
     @staticmethod
     def find_cell(main: list[list[None]], cache: list[list[None]], i, j):
@@ -80,11 +79,7 @@ class FirstStrategy(BaseStrategy):
                         miss += 1
                         cache = [None] * len(cache)
                         self.fill(main, cache, i, j)
-        return {
-            "access": access,
-            "hit": hit,
-            "miss": miss
-        }
+        return {"access": access, "hit": hit, "miss": miss}
 
 
 class SecondStrategy(BaseStrategy):
@@ -104,11 +99,7 @@ class SecondStrategy(BaseStrategy):
                         miss += 1
                         cache = [None] * len(cache)
                         self.fill(main, cache, i, j)
-        return {
-            "access": access,
-            "hit": hit,
-            "miss": miss
-        }
+        return {"access": access, "hit": hit, "miss": miss}
 
 
 class ThirdStrategy(BaseStrategy):
@@ -138,11 +129,7 @@ class ThirdStrategy(BaseStrategy):
                         miss += 1
                         cache = [None] * len(cache)
                         self.fill(main, cache, i, j)
-        return {
-            "access": access,
-            "hit": hit,
-            "miss": miss
-        }
+        return {"access": access, "hit": hit, "miss": miss}
 
 
 if __name__ == "__main__":
