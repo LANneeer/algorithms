@@ -4,7 +4,7 @@ class LNode:
         self.next = None
 
     def __repr__(self):
-        return f'{self.data}'
+        return f"{self.data}"
 
 
 class LinkedList:
@@ -29,7 +29,7 @@ class LinkedList:
         while node:
             nodes.append(node.data)
             node = node.next
-        return ' -> '.join([str(node) for node in nodes])
+        return " -> ".join([str(node) for node in nodes])
 
     def __iter__(self):
         node = self.head
@@ -60,4 +60,3 @@ class LinkedList:
             for current_node in self:
                 pass
             current_node.next = node
-

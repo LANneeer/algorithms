@@ -6,11 +6,12 @@ class Queue:
     Queue is a data structure which uses array as a line of queue,
     queue uses FIFO concept (First In First Out)
     """
+
     def __init__(self):
         self.items = deque()
 
     def __repr__(self):
-        return f'{self.items}'
+        return f"{self.items}"
 
     def __iter__(self):
         while self.items:
